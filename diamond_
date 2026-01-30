@@ -1,0 +1,33 @@
+public class diamondPattern {
+ public static void diamondPattern(int n) {
+    int space = n / 2;
+    int star = 1;
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= space; j++) {
+            System.out.print(" ");
+        }
+        for (int j = 1; j <= star; j++) {
+            System.out.print("*");
+        }
+        if (i <= n / 2) {
+            space--;
+            star += 2;
+        } else {
+            space++;
+            star -= 2;
+        }
+        System.out.println();
+    }
+    
+ }
+    public static void main(String[] args) {
+       System.out.println("Enter the number of rows for the diamond pattern (odd number):");
+       java.util.Scanner sc = new java.util.Scanner(System.in);
+         int n = sc.nextInt();
+            if (n % 2 == 0) {
+                System.out.println("Please enter an odd number.");
+            } else {
+                diamondPattern(n);
+            }
+    }
+}
